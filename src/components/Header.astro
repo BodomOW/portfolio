@@ -1,0 +1,37 @@
+---
+import Logo from "@/components/Logo.astro";
+import Lang from "@/components/Lang.astro";
+import ThemeToggle from "@/components/ThemeToggle.astro";
+---
+
+<header>
+    <Logo />
+
+    <nav>
+        <button class="btn">
+            <Lang />
+        </button>
+        <ThemeToggle />
+    </nav>
+</header>
+
+<style>
+    header {
+        background-color: var(--clr-body-bg);
+        display: flex;
+        justify-content: space-between;
+        outline: 1px solid red;
+    }
+    nav {
+        display: flex;
+    }
+    nav > .btn {
+        display: grid;
+        place-content: center;
+        min-width: 72px;
+        cursor: pointer;
+    }
+    nav > .btn:hover {
+        background-color: #ccc;
+    }
+</style>

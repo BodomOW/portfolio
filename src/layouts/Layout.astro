@@ -1,0 +1,85 @@
+---
+import ResetCSS from "@/styles/ResetCSS.astro";
+import Header from "@/components/Header.astro";
+// import Footer from '../components/Footer.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Portfolio Marco Hernandez" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ResetCSS />
+	</head>
+	<body>
+		<Header />
+		<slot />
+		<!-- <Footer /> -->
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--clr-accent: hsl(226 100% 18%);
+		--clr-body-bg: hsl(0 0% 100%);
+		--clr-title-highlight: hsl(226 100% 18%);
+		--clr-title-highlight-2: hsl(223 100% 46%);
+		--clr-subtitle: hsl(0 0% 18%);
+		--clr-txt: hsl(0 0% 32%);
+		--clr-footer-bg: hsl(0 0% 95%);
+	}
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--clr-accent: hsl(0 0% 100%);
+			--clr-body-bg: hsl(231 59% 13%);
+			--clr-title-highlight: hsl(226 70% 59%);
+			--clr-title-highlight-2: hsl(223 100% 63%);
+			--clr-subtitle: hsl(0 0% 100%);
+			--clr-txt: hsl(0 0% 98%);
+			--clr-footer-bg: hsl(232 28% 15%);
+		}
+	}
+	.light-theme {
+		--clr-accent: hsl(226 100% 18%);
+		--clr-body-bg: hsl(0 0% 100%);
+		--clr-title-highlight: hsl(226 100% 18%);
+		--clr-title-highlight-2: hsl(223 100% 46%);
+		--clr-subtitle: hsl(0 0% 18%);
+		--clr-txt: hsl(0 0% 32%);
+		--clr-footer-bg: hsl(0 0% 95%);
+	}
+
+	.dark-theme {
+		--clr-accent: hsl(0 0% 100%);
+		--clr-body-bg: hsl(231 59% 13%);
+		--clr-title-highlight: hsl(226 70% 59%);
+		--clr-title-highlight-2: hsl(223 100% 63%);
+		--clr-subtitle: hsl(0 0% 100%);
+		--clr-txt: hsl(0 0% 98%);
+		--clr-footer-bg: hsl(232 28% 15%);
+	}
+	html {
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+	}
+	body {
+		margin: 0 auto;
+		max-width: 1280px;
+		background: var(--clr-body-bg);
+		color: var(--clr-accent);
+	}
+	main,
+	section {
+		margin: 0 auto;
+		width: 68rem;
+	}
+</style>
