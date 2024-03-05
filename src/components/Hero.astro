@@ -1,5 +1,5 @@
 ---
-
+import IconList from "./IconList.astro";
 ---
 
 <main>
@@ -11,43 +11,37 @@
         </h1>
         <div class="description">
             <p>
-                With a solid foundation in Digital Design, I can bridge the gap between design and development
+                With a solid foundation in Digital Design, I can bridge the gap
+                between design and development
             </p>
             <p>
-                I am currently open to work. Feel free to reach out to me at <a href="mh94.design@gmail.com">mh94.design@gmail.com</a>
+                I am currently open to work. Feel free to reach out to me at 
+                <a href="mailto:mh94.design@gmail.com?subject=Contact from portfolio" style="color: var(--clr-title-highlight-2);">
+                    mh94.design@gmail.com
+                </a>
             </p>
         </div>
-        <div class="icons-wrapper">
-            <div class="icon"></div>
-            <div class="icon"></div>
-            <div class="icon"></div>
-            <div class="icon"></div>
-            <div id="resume"></div>
-        </div>
+        <IconList />
     </div>
-    
-    <picture>
-        Yo
-    </picture>
+
+    <picture>Yo</picture>
 </main>
 
 <style>
-    main{
-        display: flex;
-        gap: 20px;
+    main {
+        display: grid;
+        grid-template-columns: 4fr 5fr;
+        align-items: center;
+        gap: 50px;
+        outline: 1px solid red;
     }
-    .text-icons{
+    .text-icons {
         display: flex;
         flex-direction: column;
-        outline: 1px solid green;
-    }
-    h1 {
-        font-size: 36px;
-        color: var(--clr-subtitle);
-        font-weight: 400;
+        /* outline: 1px solid green; */
     }
     .highlight-1 {
-        font-size: 40px;
+        /* font-size: 40px; */
         color: var(--clr-title-highlight);
     }
     .highlight-2 {
@@ -55,21 +49,37 @@
     }
     .description {
         color: var(--clr-subtitle);
+        margin-bottom: 32px;
     }
-    .icons-wrapper{
-        display: flex;
-    }
-    .icon {
-        width: 40px;
-        height: 40px;
-        outline: 1px solid brown;
-    }
+    
 
-    picture{
+    picture {
+        container-type: inline-size;
+        container-name: img;
         display: grid;
         place-content: center;
-        background-color: gray;
-        width: 100%;
+        outline: 1px solid gray;
+        min-height: 420px;
+        width: min(100%, 620px);
+    }
+    @container img (width < 475px) {
+        /* picture {
+            width: 100%;
+        } */
+    }
+
+    @media screen and (max-width: 699px) {
+        main {
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+        }
+        picture {
+            min-height: 258px;
+            order: -1;
+        }
+        .description {
+            margin-bottom: 0;
+        }
     }
 </style>
-

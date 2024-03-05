@@ -1,5 +1,6 @@
 ---
-import ResetCSS from "@/styles/ResetCSS.astro";
+import "@/styles/reset.css";
+import "@/styles/main.css";
 import Header from "@/components/Header.astro";
 // import Footer from '../components/Footer.astro';
 
@@ -19,7 +20,6 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<ResetCSS />
 	</head>
 	<body>
 		<Header />
@@ -29,57 +29,19 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
-	:root {
-		--clr-accent: hsl(226 100% 18%);
-		--clr-body-bg: hsl(0 0% 100%);
-		--clr-title-highlight: hsl(226 100% 18%);
-		--clr-title-highlight-2: hsl(223 100% 46%);
-		--clr-subtitle: hsl(0 0% 18%);
-		--clr-txt: hsl(0 0% 32%);
-		--clr-footer-bg: hsl(0 0% 95%);
-	}
-	@media (prefers-color-scheme: dark) {
-		:root {
-			--clr-accent: hsl(0 0% 100%);
-			--clr-body-bg: hsl(231 59% 13%);
-			--clr-title-highlight: hsl(226 70% 59%);
-			--clr-title-highlight-2: hsl(223 100% 63%);
-			--clr-subtitle: hsl(0 0% 100%);
-			--clr-txt: hsl(0 0% 98%);
-			--clr-footer-bg: hsl(232 28% 15%);
-		}
-	}
-	.light-theme {
-		--clr-accent: hsl(226 100% 18%);
-		--clr-body-bg: hsl(0 0% 100%);
-		--clr-title-highlight: hsl(226 100% 18%);
-		--clr-title-highlight-2: hsl(223 100% 46%);
-		--clr-subtitle: hsl(0 0% 18%);
-		--clr-txt: hsl(0 0% 32%);
-		--clr-footer-bg: hsl(0 0% 95%);
-	}
-
-	.dark-theme {
-		--clr-accent: hsl(0 0% 100%);
-		--clr-body-bg: hsl(231 59% 13%);
-		--clr-title-highlight: hsl(226 70% 59%);
-		--clr-title-highlight-2: hsl(223 100% 63%);
-		--clr-subtitle: hsl(0 0% 100%);
-		--clr-txt: hsl(0 0% 98%);
-		--clr-footer-bg: hsl(232 28% 15%);
-	}
-	html {
-		font-family: Verdana, Geneva, Tahoma, sans-serif;
-	}
-	body {
-		margin: 0 auto;
-		max-width: 1280px;
-		background: var(--clr-body-bg);
-		color: var(--clr-accent);
-	}
 	main,
 	section {
-		margin: 0 auto;
-		width: 68rem;
+		box-sizing: border-box;
+		outline: 1px solid blue;
+		margin-top: 1rem;
+		margin-inline: auto;
+		width: min(100%, 1280px);
+		padding: 40px min(10%, 100px);
+	}
+	@media only screen and (max-width: 475px) {
+		main,
+		section {
+			padding: 1rem 20px;
+		}
 	}
 </style>

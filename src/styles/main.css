@@ -1,0 +1,79 @@
+:root {
+    /* Colors */
+    --clr-accent: hsl(226 100% 18%);
+    --clr-body-bg: hsl(0 0% 100%);
+    --clr-title-highlight: hsl(226 100% 18%);
+    --clr-title-highlight-2: hsl(223 100% 46%);
+    --clr-subtitle: hsl(0 0% 18%);
+    --clr-txt: hsl(0 0% 32%);
+    --clr-footer-bg: hsl(0 0% 95%);
+    --clr-btn-hover: hsl(0 0% 80%); 
+
+    /* Fonts */
+    --step--2: clamp(0.5208rem, 0.4811rem + 0.1986vi, 0.64rem);
+    --step--1: clamp(0.625rem, 0.5667rem + 0.2917vi, 0.8rem);
+    --step-0: clamp(0.75rem, 0.6667rem + 0.4167vi, 1rem);
+    --step-1: clamp(0.9rem, 0.7833rem + 0.5833vi, 1.25rem);
+    --step-2: clamp(1.08rem, 0.9192rem + 0.8042vi, 1.5625rem);
+    --step-3: clamp(1.296rem, 1.077rem + 1.0952vi, 1.9531rem);
+    --step-4: clamp(1.5552rem, 1.2598rem + 1.477vi, 2.4414rem);
+    --step-5: clamp(1.8662rem, 1.4711rem + 1.9759vi, 3.0518rem);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --clr-accent: hsl(0 0% 100%);
+        --clr-body-bg: hsl(231 59% 13%);
+        --clr-title-highlight: hsl(226 70% 59%);
+        --clr-title-highlight-2: hsl(223 100% 63%);
+        --clr-subtitle: hsl(0 0% 100%);
+        --clr-txt: hsl(0 0% 98%);
+        --clr-footer-bg: hsl(232 28% 15%);
+    }
+}
+
+.light-theme {
+    --clr-accent: hsl(226 100% 18%);
+    --clr-body-bg: hsl(0 0% 100%);
+    --clr-title-highlight: hsl(226 100% 18%);
+    --clr-title-highlight-2: hsl(223 100% 46%);
+    --clr-subtitle: hsl(0 0% 18%);
+    --clr-txt: hsl(0 0% 32%);
+    --clr-footer-bg: hsl(0 0% 95%);
+}
+
+.dark-theme {
+    --clr-accent: hsl(0 0% 100%);
+    --clr-body-bg: hsl(231 59% 13%);
+    --clr-title-highlight: hsl(226 70% 59%);
+    --clr-title-highlight-2: hsl(223 100% 63%);
+    --clr-subtitle: hsl(0 0% 100%);
+    --clr-txt: hsl(0 0% 98%);
+    --clr-footer-bg: hsl(232 28% 15%);
+}
+
+body {
+    margin: 0 auto;
+    max-width: 1280px;
+    background: var(--clr-body-bg);
+    color: var(--clr-accent);
+}
+
+html {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    font-size: var(--step-4);
+    color: var(--clr-subtitle);
+    font-weight: 400;
+    margin: 0 0 12px 0;
+}
+
+p {
+    font-size: var(--step-0);
+}
+
+a{
+    color: inherit;
+}
