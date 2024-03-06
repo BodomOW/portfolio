@@ -18,6 +18,9 @@
     --step-3: clamp(1.296rem, 1.077rem + 1.0952vi, 1.9531rem);
     --step-4: clamp(1.5552rem, 1.2598rem + 1.477vi, 2.4414rem);
     --step-5: clamp(1.8662rem, 1.4711rem + 1.9759vi, 3.0518rem);
+
+    /* Animations */
+    --spd-clr-hover: 250ms;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -68,6 +71,12 @@ h1 {
     color: var(--clr-subtitle);
     font-weight: 400;
     margin: 0 0 12px 0;
+}
+
+h2 {
+    font-size: var(--step-1);
+    margin: 0 0 40px 0;
+    text-align: center;
 }
 
 p {

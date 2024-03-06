@@ -1,0 +1,40 @@
+---
+import Card from "./Card.astro";
+---
+
+<section>
+    <h2>Most recent projects</h2>
+
+    <div class="cards-wrapper">
+        <Card
+            title="Nomi - Payroll Services"
+            logo="../icons/Nomi.astro"
+            image="../projects/Nomi.png"
+            cta="Visit website"
+            href="https://nomi.mx/"
+        />
+        <Card
+            title="Montes Corp"
+            logo="../icons/Nomi.astro"
+            image="../projects/Nomi.png"
+            cta="Visit website"
+            href="https://nomi.mx/"
+        />
+        <Card
+            title="Fitime Store"
+            logo="../icons/FitimeStore.astro"
+            image="../projects/FitimeStore.png"
+            cta="View project"
+            href="https://www.behance.net/gallery/117843071/UI-para-Web-Fitime-Store"
+        />
+    </div>
+</section>
+
+<style>
+    .cards-wrapper{
+        display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
+    }
+</style>

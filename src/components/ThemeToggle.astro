@@ -1,6 +1,6 @@
 ---
-import Sun from "@/icons/Sun.astro";
-import Moon from "@/icons/Moon.astro";
+import Sun from "@/icons/Sun.astro"
+import Moon from "@/icons/Moon.astro"
 ---
 
 <button class="btn" aria-label="Switch to dark theme">
@@ -11,7 +11,6 @@ import Moon from "@/icons/Moon.astro";
         <Moon />
     </label>
 </button>
-
 <script defer>
     const themeToggles = document.querySelectorAll('[name="theme-toggle"]');
 
@@ -33,7 +32,6 @@ import Moon from "@/icons/Moon.astro";
         document.body.classList.add("dark-theme");
         themeToggles.forEach((toggle) => {
             toggle.closest('button').setAttribute("aria-label", "Switch to light theme");
-            // Sync buttons
             toggle.checked = false;
         });
         storeTheme("dark");
@@ -44,7 +42,6 @@ import Moon from "@/icons/Moon.astro";
         document.body.classList.add("light-theme");
         themeToggles.forEach((toggle) => {
             toggle.closest('button').setAttribute("aria-label", "Switch to dark theme");
-            // Sync buttons
             toggle.checked = true;
         });
         storeTheme("light");
