@@ -15,6 +15,9 @@
       "@/skills": [
         "src/icons/skills/*"
       ],
+      "@/projects": [
+        "src/projects/*"
+      ],
       "@/styles": [
         "src/styles/*"
       ]
