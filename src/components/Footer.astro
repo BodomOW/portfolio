@@ -1,0 +1,39 @@
+---
+import Logo from "@/components/Logo.astro";
+import IconList from "./IconList.astro";
+---
+
+<footer>
+    <Logo />
+
+    <ul>
+        <IconList />
+    </ul>
+</footer>
+
+<style>
+    footer {
+        background-color: var(--clr-footer-bg);
+        display: flex;
+        justify-content: space-between;
+        outline: 1px solid red;
+        margin-top: 1rem;
+    }
+    ul {
+        display: flex;
+    }
+    ul > .btn {
+        display: grid;
+        place-content: center;
+        min-width: 72px;
+        cursor: pointer;
+    }
+    nav > .btn:hover {
+        background-color: #ccc;
+    }
+
+    footer :global(a[download]) {
+        display: none;
+    }
+
+</style>
