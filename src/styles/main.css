@@ -53,6 +53,7 @@
     --clr-subtitle: hsl(0 0% 100%);
     --clr-txt: hsl(0 0% 98%);
     --clr-footer-bg: hsl(232 28% 15%);
+    --clr-btn-hover: hsl(231 59% 40%);; 
 }
 
 body {

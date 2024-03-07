@@ -12,10 +12,10 @@ interface Props {
 const { href, title, logo, image, cta } = Astro.props;
 ---
 
-<li class="project-card">
-	<div class="default">
+<li class="project-card" data-image={image}>
+	<div class="default" data-image={image}>
 		<picture>
-			<img src={logo} alt="" />
+			<img src={logo} alt=`${image} Logo` />
 		</picture>
 	</div>
 
@@ -40,14 +40,9 @@ const { href, title, logo, image, cta } = Astro.props;
 		color: white;
 		min-height: 215px;
 		padding: 1px;
-		background-color: hotpink;
+		/* background-color: hotpink; */
 		/* background-image: url("../projects/Nomi.png"); */
 		opacity: 1;
-		background-size: 120%;
-		background-position: 100%;
-		/* object-fit: fill; */
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 		position: relative;
 	}
 	.info {
@@ -55,12 +50,12 @@ const { href, title, logo, image, cta } = Astro.props;
 		widows: 100%;
 		height: 100%;
 		inset: 0;
+		z-index: 2;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-evenly;
 		align-items: center;
 		background-color: var(--clr-accent);
-		/* background-image: url("../projects/Nomi.png"); */
 
 		opacity: 0;
 		transition: opacity 250ms ease-in;
@@ -89,7 +84,7 @@ const { href, title, logo, image, cta } = Astro.props;
 		text-decoration: none;
 		padding: 6px 8px;
 		border-radius: 20px;
-		background-color: white;
+		background-color: var(--clr-body-bg);
 		width: fit-content;
 
 		transition: background-color var(--spd-clr-hover) ease-in;
@@ -104,19 +99,38 @@ const { href, title, logo, image, cta } = Astro.props;
 	}
 	h3 {
 		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
+		font-size: var(--step-0);
+		color: var(--clr-body-bg);
 	}
 	.default {
 		opacity: 1;
 		position: absolute;
 		widows: 100%;
 		height: 100%;
+		display: grid;
+		place-content: center;
 		inset: 0;
-		background-color: aquamarine;
+	}
+	[data-image="Nomi"]::after,
+	[data-image="MontesCorp"]::after,
+	[data-image="FitimeStore"]::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		widows: 100%;
+		height: 100%;
+		background-size: 100%;
+	}
+	[data-image="Nomi"]::after {
+		background-image: url("../projects/Nomi.jpg");
+	}
+	[data-image="MontesCorp"]::after {
+		background-image: url("../projects/MontesCorp.jpg");
+	}
+	[data-image="FitimeStore"]::after {
+		background-image: url("../projects/FitimeStore.jpg");
+	}
+	picture {
+		z-index: 1;
 	}
 </style>

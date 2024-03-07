@@ -1,0 +1,22 @@
+---
+const skills = await Astro.glob("../icons/skills/*.astro");
+---
+
+<section>
+    <h2>Skills</h2>
+
+    <div class="skills-wrapper">
+        {skills.map((skill) => <skill.default />)}
+    </div>
+</section>
+
+<style>
+    .skills-wrapper {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(10ch, 1fr));
+        gap: 2rem;
+        padding: 0;
+        max-width: 1080px;
+    }
+</style>
