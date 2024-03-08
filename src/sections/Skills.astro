@@ -1,12 +1,12 @@
 ---
-const skills = await Astro.glob("../icons/skills/*.astro");
+const skills = await Astro.glob("../assets/icons/skills/*.astro");
 ---
 
 <section>
     <h2>Skills</h2>
 
     <div class="skills-wrapper">
-        {skills.map((skill) => <skill.default />)}
+        { skills.map((skill) => <skill.default />) }
     </div>
 </section>
 
