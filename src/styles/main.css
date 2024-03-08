@@ -7,7 +7,7 @@
     --clr-subtitle: hsl(0 0% 18%);
     --clr-txt: hsl(0 0% 32%);
     --clr-footer-bg: hsl(0 0% 95%);
-    --clr-btn-hover: hsl(0 0% 80%); 
+    --clr-btn-hover: hsl(0 0% 80%);
 
     /* Fonts */
     --step--2: clamp(0.5208rem, 0.4811rem + 0.1986vi, 0.64rem);
@@ -26,12 +26,13 @@
 @media (prefers-color-scheme: dark) {
     :root {
         --clr-accent: hsl(0 0% 100%);
-        --clr-body-bg: hsl(231 59% 13%);
+        --clr-body-bg: hsl(232, 25%, 19%);
         --clr-title-highlight: hsl(226 70% 59%);
         --clr-title-highlight-2: hsl(223 100% 63%);
         --clr-subtitle: hsl(0 0% 100%);
         --clr-txt: hsl(0 0% 98%);
         --clr-footer-bg: hsl(232 28% 15%);
+        --clr-btn-hover: hsl(244, 38%, 34%);
     }
 }
 
@@ -43,24 +44,29 @@
     --clr-subtitle: hsl(0 0% 18%);
     --clr-txt: hsl(0 0% 32%);
     --clr-footer-bg: hsl(0 0% 95%);
+    --clr-btn-hover: hsl(0 0% 80%);
 }
 
 .dark-theme {
     --clr-accent: hsl(0 0% 100%);
-    --clr-body-bg: hsl(231 59% 13%);
+    --clr-body-bg: hsl(232, 25%, 19%);
     --clr-title-highlight: hsl(226 70% 59%);
     --clr-title-highlight-2: hsl(223 100% 63%);
     --clr-subtitle: hsl(0 0% 100%);
     --clr-txt: hsl(0 0% 98%);
     --clr-footer-bg: hsl(232 28% 15%);
-    --clr-btn-hover: hsl(231 59% 40%);; 
+    --clr-btn-hover: hsl(244, 38%, 34%);
 }
 
 body {
-    margin: 0 auto;
-    max-width: 1280px;
     background: var(--clr-body-bg);
     color: var(--clr-accent);
+    margin: 0;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1280px;
 }
 
 html {
@@ -84,6 +90,6 @@ p {
     font-size: var(--step-0);
 }
 
-a{
+a {
     color: inherit;
 }

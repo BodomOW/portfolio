@@ -2,7 +2,7 @@
 import "@/styles/reset.css";
 import "@/styles/main.css";
 import Header from "@/components/Header.astro";
-import Footer from '@/components/Footer.astro';
+import Footer from "@/components/Footer.astro";
 
 interface Props {
 	title: string;
@@ -22,8 +22,10 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<Header />
-		<slot />
+		<div class="container">
+			<Header />
+			<slot />
+		</div>
 		<Footer />
 	</body>
 </html>
@@ -32,8 +34,6 @@ const { title } = Astro.props;
 	main,
 	section {
 		box-sizing: border-box;
-		outline: 1px solid blue;
-		margin-top: 1rem;
 		margin-inline: auto;
 		width: min(100%, 1280px);
 		padding: 40px min(10%, 100px);
@@ -41,7 +41,7 @@ const { title } = Astro.props;
 	@media only screen and (max-width: 475px) {
 		main,
 		section {
-			padding: 1rem 20px;
+			padding: 20px;
 		}
 	}
 </style>

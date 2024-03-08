@@ -1,0 +1,58 @@
+---
+
+---
+
+<section>
+    <h2>About me</h2>
+
+    <div class="content">
+        <picture>Yo otra vez</picture>
+        <div>
+            When not immersed in my professional world, you'll find me:
+            <ul>
+                <li>Spending time with family and friends</li>
+                <li>Playing piano</li>
+                <li>Watching or training MMA</li>
+                <li>Playing Videogames</li>
+                <li>Enjoying homebrew beer</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<style>
+    .content {
+        display: flex;
+        padding-block: 2rem;
+        gap: 3rem;
+        line-height: 1.6;
+    }
+    picture {
+        container-type: inline-size;
+        container-name: img;
+        display: grid;
+        place-content: center;
+        outline: 1px solid gray;
+        min-height: 420px;
+        width: min(100%, 620px);
+    }
+    .content > div{
+        padding-top: 2rem;
+    }
+    li {
+        line-height: 2.25;
+    }
+    @media screen and (max-width: 699px) {
+        .content {
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+        }
+        picture {
+            min-height: 258px;
+        }
+        .content {
+        padding-block: 0;
+    }
+    }
+</style>
