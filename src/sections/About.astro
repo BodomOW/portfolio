@@ -6,7 +6,12 @@
     <h2>About me</h2>
 
     <div class="content">
-        <picture>Yo otra vez</picture>
+        <picture
+            ><img
+                src="src/assets/images/io.jpg"
+                alt="Monitor web development"
+            /></picture
+        >
         <div>
             When not immersed in my professional world, you'll find me:
             <ul>
@@ -32,11 +37,17 @@
         container-name: img;
         display: grid;
         place-content: center;
-        outline: 1px solid gray;
-        min-height: 420px;
+        max-height: 420px;
         width: min(100%, 620px);
+        overflow: hidden;
     }
-    .content > div{
+    img {
+        aspect-ratio: 1 / 1;
+        object-fit: contain;
+        top: 2rem;
+        margin-top: 5rem;
+    }
+    .content > div {
         padding-top: 2rem;
     }
     li {
@@ -52,7 +63,7 @@
             min-height: 258px;
         }
         .content {
-        padding-block: 0;
-    }
+            padding-block: 0;
+        }
     }
 </style>

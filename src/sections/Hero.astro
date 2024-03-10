@@ -24,7 +24,9 @@ import IconList from "../components/IconList.astro";
         <IconList />
     </div>
 
-    <picture>Yo</picture>
+    <picture>
+        <img src="src/assets/images/monitor-web.jpg" alt="Monitor web development" />
+    </picture>
 </main>
 
 <style>
@@ -57,17 +59,19 @@ import IconList from "../components/IconList.astro";
         container-name: img;
         display: grid;
         place-content: center;
-        outline: 1px solid gray;
-        min-height: 420px;
+        max-height: 420px;
         width: min(100%, 620px);
+        overflow: hidden;
+    }
+    img {
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
     }
     @container img (width < 475px) {
-        /* picture {
-            width: 100%;
-        } */
+
     }
 
-    @media screen and (max-width: 699px) {
+    @media screen and (max-width: 810px) {
         main {
             display: flex;
             gap: 20px;

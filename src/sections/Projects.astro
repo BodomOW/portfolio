@@ -15,25 +15,25 @@ const listOfProjects = PROJECTS.map((project) => {
         { 
             listOfProjects.map(({ id, title, logo, cta, url }) => (
                 <li class="project-card" data-image={id}>
-                <div class="default" data-image={id}>
-                    <picture>
-                        <img src={logo} alt=`${id} Logo` />
-                    </picture>
-                </div>
+					<div class="default" data-image={id}>
+						<picture>
+							<img src={logo} alt=`${id} Logo` />
+						</picture>
+					</div>
 
-                <div class="info">
-                    <h3>
-                        {title}
-                    </h3>
-                    <a href={url} target="_blank">
-                        <button>
-                            <span>{cta}</span>
-                            <ArrowRight />
-                        </button>
-                    </a>
-                </div>
-            </li>
-        ))
+					<div class="info">
+						<h3>
+							{title}
+						</h3>
+						<a href={url} target="_blank">
+							<button>
+								<span>{cta}</span>
+								<ArrowRight />
+							</button>
+						</a>
+					</div>
+				</li>
+        	))
         }
     </div>
 </section>
@@ -144,4 +144,4 @@ const listOfProjects = PROJECTS.map((project) => {
 		z-index: 1;
 	}
 
-</style>@/const/projects
+</style>
