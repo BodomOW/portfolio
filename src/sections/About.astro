@@ -7,10 +7,7 @@ import AboutImg from "../assets/images/yo.jpg";
 
     <div class="content">
         <picture>
-            <img
-                src={AboutImg.src}
-                alt="Marco Hernandez posing"
-            />
+            <img src={AboutImg.src} alt="Marco Hernandez posing" />
         </picture>
         <div>
             When not immersed in my professional world, you'll find me:
@@ -45,13 +42,17 @@ import AboutImg from "../assets/images/yo.jpg";
         aspect-ratio: 1 / 1;
         object-fit: contain;
         top: 2rem;
-        margin-top: 5rem;
     }
     .content > div {
         padding-top: 2rem;
     }
     li {
         line-height: 2.25;
+    }
+    @media screen and (min-width: 1100px) {
+        img {
+            margin-top: 5rem;
+        }
     }
     @media screen and (max-width: 699px) {
         .content {

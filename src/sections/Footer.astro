@@ -1,6 +1,6 @@
 ---
 import Logo from "@/components/Logo.astro";
-import IconList from "../components/IconList.astro";
+import IconList from "@/components/IconList.astro";
 ---
 
 <footer>
@@ -34,8 +34,9 @@ import IconList from "../components/IconList.astro";
         background-color: #ccc;
     }
 
-    footer :global(a[download]) {
+    footer :global(ul[role="list"] > :not(li)) {
         display: none;
+        /* outline: 2px solid red; */
     }
 
     @media only screen and (max-width: 475px) {
