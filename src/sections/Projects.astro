@@ -1,30 +1,24 @@
 ---
-import { PROJECTS } from "src/consts/projects"
+import { PROJECTS } from "src/consts/projects";
 import ArrowRight from "src/assets/icons/ArrowRight.astro";
 
 const listOfProjects = PROJECTS.map((project) => {
-	const { id, title, logo, cta, url } = project
-	return { ...project }
-})
+	const { id, title, cta, url } = project;
+	return { ...project };
+});
 ---
 
 <section>
-    <h2>Most recent projects</h2>
+	<h2>Most recent projects</h2>
 
-    <div class="cards-wrapper">
-        { 
-            listOfProjects.map(({ id, title, logo, cta, url }) => (
-                <li class="project-card" data-image={id}>
-					<div class="default" data-image={id}>
-						<picture>
-							<img src=`${logo}` alt=`${id} Logo` />
-						</picture>
-					</div>
+	<div class="cards-wrapper">
+		{
+			listOfProjects.map(({ id, title, cta, url }) => (
+				<li class="project-card" data-image={id}>
+					<div class="default" data-image={id} />
 
 					<div class="info">
-						<h3>
-							{title}
-						</h3>
+						<h3>{title}</h3>
 						<a href={url} target="_blank">
 							<button>
 								<span>{cta}</span>
@@ -33,18 +27,18 @@ const listOfProjects = PROJECTS.map((project) => {
 						</a>
 					</div>
 				</li>
-        	))
-        }
-    </div>
+			))
+		}
+	</div>
 </section>
 
 <style>
-    .cards-wrapper{
-        display: grid;
+	.cards-wrapper {
+		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 2rem;
 		padding: 0;
-    }
+	}
 	.project-card {
 		list-style: none;
 		display: grid;
@@ -143,5 +137,4 @@ const listOfProjects = PROJECTS.map((project) => {
 	picture {
 		z-index: 1;
 	}
-
 </style>
