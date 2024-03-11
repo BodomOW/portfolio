@@ -5,6 +5,6 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
-  site: 'https://bodomow.github.io/',
+  site: 'https://bodomow.github.io',
   base: '/portfolio',
 });
