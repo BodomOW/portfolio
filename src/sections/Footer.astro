@@ -7,9 +7,9 @@ import IconList from "@/components/IconList.astro";
     <div class="container footer-content">
         <Logo />
 
-        <ul>
+        <div>
             <IconList />
-        </ul>
+        </div>
     </div>
 </footer>
 
@@ -21,10 +21,10 @@ import IconList from "@/components/IconList.astro";
         display: flex;
         justify-content: space-between;
     }
-    ul {
+    div {
         display: flex;
     }
-    ul > .btn {
+    div > .btn {
         display: grid;
         place-content: center;
         min-width: 72px;
@@ -36,7 +36,6 @@ import IconList from "@/components/IconList.astro";
 
     footer :global(ul[role="list"] > :not(li)) {
         display: none;
-        /* outline: 2px solid red; */
     }
 
     @media only screen and (max-width: 475px) {
@@ -44,6 +43,9 @@ import IconList from "@/components/IconList.astro";
             flex-direction: column;
             align-items: center;
             padding-top: 20px;
+        }
+        div {
+            padding: 1rem;
         }
     }
 </style>
