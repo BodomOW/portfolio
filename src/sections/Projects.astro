@@ -15,7 +15,10 @@ const listOfProjects = PROJECTS.map((project) => {
 		{
 			listOfProjects.map(({ id, title, cta, url }) => (
 				<li class="project-card" data-image={id}>
-					<div class="default" data-image={id} />
+					<div class="default" data-image={id}></div>
+					<picture>
+						<img src=`src/assets/projects/${id}.svg` alt=`${id} Logo` />
+					</picture>
 
 					<div class="info">
 						<h3>{title}</h3>
@@ -29,8 +32,7 @@ const listOfProjects = PROJECTS.map((project) => {
 				</li>
 			))
 		}
-	</ul>
-</section>
+		</ul>
 
 <style>
 	.cards-wrapper {
