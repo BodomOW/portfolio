@@ -15,7 +15,7 @@ export const PROJECTS: Project[] = [
     {
         id: "MontesCorp",
         title: "Montes Corp",
-        cta: "Visit website",
+        cta: "Visit figma",
         url: "https://www.figma.com/file/eq9LJtDx4omKtaZ67fpLnN/Montes-Corp-Website?type=design&node-id=148%3A162&mode=design&t=TSUGjQ51v77Bz4nM-1"
     },
     {
