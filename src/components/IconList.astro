@@ -1,33 +1,48 @@
 ---
-import LinkedInIcon from "src/assets/icons/Linkedin.astro";
-import GitHubIcon from "src/assets/icons/Github.astro";
-import CodePenIcon from "src/assets/icons/Codepen.astro";
-import EmailIcon from "src/assets/icons/Email.astro";
-import Resume from "src/assets/icons/Download.astro";
+import LinkedInIcon from 'src/assets/icons/Linkedin.astro'
+import GitHubIcon from 'src/assets/icons/Github.astro'
+import CodePenIcon from 'src/assets/icons/Codepen.astro'
+import EmailIcon from 'src/assets/icons/Email.astro'
+import Resume from 'src/assets/icons/Download.astro'
 ---
 
-<ul role="list">
+<ul role='list'>
     <li>
-        <a href="https://www.linkedin.com/in/mhernandez-dev/" target="_blank" aria-label="LinkedIn">
+        <a
+            href='https://www.linkedin.com/in/mhernandez-dev/'
+            target='_blank'
+            aria-label='LinkedIn'
+        >
             <LinkedInIcon />
         </a>
     </li>
     <li>
-        <a href="https://github.com/BodomOW" target="_blank" aria-label="GitHub">
+        <a
+            href='https://github.com/BodomOW'
+            target='_blank'
+            aria-label='GitHub'
+        >
             <GitHubIcon />
         </a>
     </li>
-    <li>
-        <a href="https://codepen.io/bodomow-the-encoder" target="_blank" aria-label="CodePen">
+    <!-- <li>
+        <a
+            href='https://codepen.io/bodomow-the-encoder'
+            target='_blank'
+            aria-label='CodePen'
+        >
             <CodePenIcon />
         </a>
-    </li>
+    </li> -->
     <li>
-        <a href="mailto:mh94.design@gmail.com" target="_blank" aria-label="Email">
+        <a
+            href='mailto:mh94.design@gmail.com'
+            target='_blank'
+            aria-label='Email'
+        >
             <EmailIcon />
         </a>
     </li>
-    { }
     <Resume />
 </ul>
 
@@ -45,14 +60,14 @@ import Resume from "src/assets/icons/Download.astro";
         place-content: center;
         width: 40px;
         height: 40px;
-        border-radius: .125rem;
+        border-radius: 0.125rem;
         transition: background-color var(--spd-clr-hover);
     }
     a:hover {
         cursor: pointer;
         background-color: var(--clr-btn-hover);
     }
-    @media only screen and (max-width: 475px){
+    @media only screen and (max-width: 475px) {
         a {
             width: 36px;
             height: 36px;
