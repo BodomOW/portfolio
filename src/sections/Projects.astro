@@ -1,142 +1,146 @@
 ---
-import { PROJECTS } from "src/consts/projects";
-import ArrowRight from "src/assets/icons/ArrowRight.astro";
+import { PROJECTS } from 'src/consts/projects'
+import ArrowRight from 'src/assets/icons/ArrowRight.astro'
 
 const listOfProjects = PROJECTS.map((project) => {
-	const { id, title, cta, url } = project;
-	return { ...project };
-});
+    const { id, title, cta, url } = project
+    return { ...project }
+})
 ---
 
 <section>
-	<h2>Most recent projects</h2>
+    <h2>Most recent projects</h2>
 
-	<ul class="cards-wrapper">
-		{
-			listOfProjects.map(({ id, title, cta, url }) => (
-				<li class="project-card" data-image={id}>
-					<div class="default" data-image={id}></div>
-					<picture>
-						<img src=`/portfolio/_astro/${id}.svg` alt=`${id} Logo` />
-					</picture>
+    <ul class='cards-wrapper'>
+        {
+            listOfProjects.map(({ id, title, cta, url }) => (
+                <li class='project-card' data-image={id}>
+                    <div class='default' data-image={id} />
+                    <picture>
+                        <img
+                            src={`/portfolio/_astro/${id}.svg`}
+                            alt={`${id} Logo`}
+                        />
+                    </picture>
 
-					<div class="info">
-						<h3>{title}</h3>
-						<a href={url} target="_blank">
-							<button>
-								<span>{cta}</span>
-								<ArrowRight />
-							</button>
-						</a>
-					</div>
-				</li>
-			))
-		}
-		</ul>
+                    <div class='info'>
+                        <h3>{title}</h3>
+                        <a href={url} target='_blank'>
+                            <button>
+                                <span>{cta}</span>
+                                <ArrowRight />
+                            </button>
+                        </a>
+                    </div>
+                </li>
+            ))
+        }
+    </ul>
 
-<style>
-	.cards-wrapper {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
-	.project-card {
-		list-style: none;
-		display: grid;
-		place-content: center;
-		color: white;
-		min-height: 215px;
-		padding: 1px;
-		opacity: 1;
-		position: relative;
-	}
-	.info {
-		position: absolute;
-		widows: 100%;
-		height: 100%;
-		inset: 0;
-		z-index: 2;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-evenly;
-		align-items: center;
-		background-color: var(--clr-accent);
+    <style>
+        .cards-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+            gap: 2rem;
+            padding: 0;
+        }
+        .project-card {
+            list-style: none;
+            display: grid;
+            place-content: center;
+            color: white;
+            min-height: 215px;
+            padding: 1px;
+            opacity: 1;
+            position: relative;
+        }
+        .info {
+            position: absolute;
+            widows: 100%;
+            height: 100%;
+            inset: 0;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: var(--clr-accent);
 
-		opacity: 0;
-		transition: opacity 250ms ease-in;
-	}
-	.project-card:hover .info {
-		opacity: 1;
-	}
-	.project-card .info > * {
-		transform: translateY(16px);
-		transition: transform 450ms ease;
-	}
+            opacity: 0;
+            transition: opacity 250ms ease-in;
+        }
+        .project-card:hover .info {
+            opacity: 1;
+        }
+        .project-card .info > * {
+            transform: translateY(16px);
+            transition: transform 450ms ease;
+        }
 
-	.project-card:hover .info > * {
-		transform: translateY(0);
-	}
-	a {
-		text-decoration: none;
-	}
-	button {
-		display: flex;
-		align-items: center;
-		gap: 4px;
-		color: var(--clr-accent);
-		font-size: var(--step--1);
-		font-weight: 700;
-		text-decoration: none;
-		padding: 6px 8px;
-		border-radius: 20px;
-		background-color: var(--clr-body-bg);
-		width: fit-content;
+        .project-card:hover .info > * {
+            transform: translateY(0);
+        }
+        a {
+            text-decoration: none;
+        }
+        button {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--clr-accent);
+            font-size: var(--step--1);
+            font-weight: 700;
+            text-decoration: none;
+            padding: 6px 8px;
+            border-radius: 20px;
+            background-color: var(--clr-body-bg);
+            width: fit-content;
 
-		transition: background-color var(--spd-clr-hover) ease-in;
-	}
-	button:hover {
-		cursor: pointer;
-		background-color: var(--clr-btn-hover);
-	}
+            transition: background-color var(--spd-clr-hover) ease-in;
+        }
+        button:hover {
+            cursor: pointer;
+            background-color: var(--clr-btn-hover);
+        }
 
-	span {
-		margin-top: 1px;
-	}
-	h3 {
-		margin: 0;
-		font-size: var(--step-0);
-		color: var(--clr-body-bg);
-	}
-	.default {
-		opacity: 1;
-		position: absolute;
-		widows: 100%;
-		height: 100%;
-		display: grid;
-		place-content: center;
-		inset: 0;
-	}
-	[data-image="Nomi"]::after,
-	[data-image="MontesCorp"]::after,
-	[data-image="FitimeStore"]::after {
-		content: "";
-		position: absolute;
-		inset: 0;
-		widows: 100%;
-		height: 100%;
-		background-size: 100%;
-	}
-	[data-image="Nomi"]::after {
-		background-image: url("../assets/projects/Nomi.jpg");
-	}
-	[data-image="MontesCorp"]::after {
-		background-image: url("../assets/projects/MontesCorp.jpg");
-	}
-	[data-image="FitimeStore"]::after {
-		background-image: url("../assets/projects/FitimeStore.jpg");
-	}
-	picture {
-		z-index: 1;
-	}
-</style>
+        span {
+            margin-top: 1px;
+        }
+        h3 {
+            margin: 0;
+            font-size: var(--step-0);
+            color: var(--clr-body-bg);
+        }
+        .default {
+            opacity: 1;
+            position: absolute;
+            widows: 100%;
+            height: 100%;
+            display: grid;
+            place-content: center;
+            inset: 0;
+        }
+        [data-image='Nomi']::after,
+        [data-image='MontesCorp']::after,
+        [data-image='FitimeStore']::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            widows: 100%;
+            height: 100%;
+            background-size: 100%;
+        }
+        [data-image='Nomi']::after {
+            background-image: url('../assets/projects/Nomi.jpg');
+        }
+        [data-image='MontesCorp']::after {
+            background-image: url('../assets/projects/MontesCorp.jpg');
+        }
+        [data-image='FitimeStore']::after {
+            background-image: url('../assets/projects/FitimeStore.jpg');
+        }
+        picture {
+            z-index: 1;
+        }
+    </style>
+</section>
