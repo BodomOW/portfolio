@@ -1,23 +1,25 @@
 ---
-import IconList from "../components/IconList.astro";
-import HeroeImg from "src/assets/images/monitor-web.jpg";
+import IconList from '../components/IconList.astro'
+import HeroeImg from 'src/assets/images/monitor-web.jpg'
 ---
 
 <main>
-    <div class="text-icons">
+    <div class='text-icons'>
         <h1>
-            <span class="highlight-1">Frontend Developer</span> specialized in <span
-                class="highlight-2">UI/UX</span
+            Frontend Developer specialized in <span class='highlight-2'
+                >UI/UX</span
             >
         </h1>
-        <div class="description">
+        <div class='description'>
             <p>
                 With a solid foundation in Digital Design, I can bridge the gap
                 between design and development
             </p>
             <p>
-                I am currently open to work. Feel free to reach out to me at 
-                <a href="mailto:mh94.design@gmail.com?subject=Contact from portfolio" style="color: var(--clr-title-highlight-2);">
+                I am currently open to work. Feel free to reach out to me at
+                <a
+                    href='mailto:mh94.design@gmail.com?subject=Contact from portfolio'
+                >
                     mh94.design@gmail.com
                 </a>
             </p>
@@ -26,7 +28,7 @@ import HeroeImg from "src/assets/images/monitor-web.jpg";
     </div>
 
     <picture>
-        <img src={HeroeImg.src} alt="Monitor web development" />
+        <img src={HeroeImg.src} alt='Monitor web development' />
     </picture>
 </main>
 
@@ -42,18 +44,17 @@ import HeroeImg from "src/assets/images/monitor-web.jpg";
         flex-direction: column;
         /* outline: 1px solid green; */
     }
-    .highlight-1 {
+    h1 {
         /* font-size: 40px; */
-        color: var(--clr-title-highlight);
+        color: var(--clr-accent);
     }
     .highlight-2 {
-        color: var(--clr-title-highlight-2);
+        color: var(--clr-title-highlight);
     }
     .description {
         color: var(--clr-subtitle);
         margin-bottom: 32px;
     }
-    
 
     picture {
         container-type: inline-size;
@@ -68,8 +69,10 @@ import HeroeImg from "src/assets/images/monitor-web.jpg";
         aspect-ratio: 1 / 1;
         object-fit: cover;
     }
+    a {
+        color: var(--clr-title-highlight);
+    }
     @container img (width < 475px) {
-
     }
 
     @media screen and (max-width: 810px) {

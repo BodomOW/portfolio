@@ -9,19 +9,19 @@ export const PROJECTS: Project[] = [
     {
         id: "Nomi",
         title: "Nomi - Payroll Services",
-        cta: "Visit website",
+        cta: "Website",
         url: "https://nomi.mx/"
     },
     {
         id: "MontesCorp",
         title: "Montes Corp",
-        cta: "Visit figma",
-        url: "https://www.figma.com/file/eq9LJtDx4omKtaZ67fpLnN/Montes-Corp-Website?type=design&node-id=148%3A162&mode=design&t=TSUGjQ51v77Bz4nM-1"
+        cta: "Demo",
+        url: "https://montes-corp.vercel.app/"
     },
     {
         id: "FitimeStore",
         title: "Fitime Store",
-        cta: "Visit project",
+        cta: "Design",
         url: "https://www.behance.net/gallery/117843071/UI-para-Web-Fitime-Store"
     },
 ]

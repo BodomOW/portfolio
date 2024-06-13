@@ -2,8 +2,7 @@
     /* Colors */
     --clr-accent: hsl(226 100% 18%);
     --clr-body-bg: hsl(0 0% 100%);
-    --clr-title-highlight: hsl(226 100% 18%);
-    --clr-title-highlight-2: hsl(223 100% 46%);
+    --clr-title-highlight: hsl(223 100% 46%);
     --clr-subtitle: hsl(0 0% 18%);
     --clr-txt: hsl(0 0% 32%);
     --clr-footer-bg: hsl(0 0% 95%);
@@ -27,8 +26,7 @@
     :root {
         --clr-accent: hsl(0 0% 100%);
         --clr-body-bg: hsl(232, 25%, 19%);
-        --clr-title-highlight: hsl(226 70% 59%);
-        --clr-title-highlight-2: hsl(223 100% 63%);
+        --clr-title-highlight: hsl(223 100% 63%);
         --clr-subtitle: hsl(0 0% 100%);
         --clr-txt: hsl(0 0% 98%);
         --clr-footer-bg: hsl(232 28% 15%);
@@ -39,8 +37,7 @@
 .light-theme {
     --clr-accent: hsl(226 100% 18%);
     --clr-body-bg: hsl(0 0% 100%);
-    --clr-title-highlight: hsl(226 100% 18%);
-    --clr-title-highlight-2: hsl(223 100% 46%);
+    --clr-title-highlight: hsl(223 100% 46%);
     --clr-subtitle: hsl(0 0% 18%);
     --clr-txt: hsl(0 0% 32%);
     --clr-footer-bg: hsl(0 0% 95%);
@@ -50,8 +47,7 @@
 .dark-theme {
     --clr-accent: hsl(0 0% 100%);
     --clr-body-bg: hsl(232, 25%, 19%);
-    --clr-title-highlight: hsl(226 70% 59%);
-    --clr-title-highlight-2: hsl(223 100% 63%);
+    --clr-title-highlight: hsl(223 100% 63%);
     --clr-subtitle: hsl(0 0% 100%);
     --clr-txt: hsl(0 0% 98%);
     --clr-footer-bg: hsl(232 28% 15%);
@@ -90,11 +86,44 @@ svg {
     color: var(--clr-accent);
 }
 
-p, ul, li, div {
+p,
+ul,
+li,
+div {
     font-size: var(--step-1);
     color: var(--clr-txt);
 }
 
 a {
     color: inherit;
+}
+
+/* Util */
+[data-tooltip] {
+    position: relative;
+    cursor: help
+}
+
+[data-tooltip]::after {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    content: attr(data-tooltip);
+    left: 0;
+    top: calc(100% + 5px);
+    border-radius: 3px;
+    box-shadow: 0 0 5px 2px rgba(100, 100, 100, 0.6);
+    background-color: var(--clr-accent);
+    color: var(--clr-body-bg);
+    z-index: 10;
+    padding: 8px;
+    width: fit-content;
+    transform: translateY(-20px);
+    transition: all 150ms cubic-bezier(.25, .8, .25, 1);
+}
+
+[data-tooltip]:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: 300ms;
 }

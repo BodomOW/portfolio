@@ -9,7 +9,7 @@ const listOfProjects = PROJECTS.map((project) => {
 ---
 
 <section>
-    <h2>Most recent projects</h2>
+    <h2>Projects</h2>
 
     <ul class='cards-wrapper'>
         {
@@ -68,6 +68,13 @@ const listOfProjects = PROJECTS.map((project) => {
 
             opacity: 0;
             transition: opacity 250ms ease-in;
+        }
+        img {
+            transition: transform 300ms ease;
+        }
+
+        .project-card:hover img {
+            transform: scale(0.9);
         }
         .project-card:hover .info {
             opacity: 1;
