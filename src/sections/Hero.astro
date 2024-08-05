@@ -1,6 +1,6 @@
 ---
 import IconList from '../components/IconList.astro'
-import HeroeImg from 'src/assets/images/monitor-web.jpg'
+import HeroeImg from 'src/assets/images/Marco02.jpg'
 ---
 
 <main>
@@ -35,7 +35,7 @@ import HeroeImg from 'src/assets/images/monitor-web.jpg'
 <style>
     main {
         display: grid;
-        grid-template-columns: 4fr 5fr;
+        grid-template-columns: 1fr 1fr;
         align-items: center;
         gap: 50px;
     }
@@ -63,14 +63,18 @@ import HeroeImg from 'src/assets/images/monitor-web.jpg'
         container-type: inline-size;
         container-name: img;
         display: grid;
-        place-content: center;
+        place-content: end;
         max-height: 420px;
-        width: min(100%, 620px);
-        overflow: hidden;
+        max-width: 420px;
+        /* background-color: red; */
     }
     img {
+        /* background-color: hsla(226, 100%, 18%); */
+        border: 4px solid var(--clr-accent);
+        border-radius: 20%;
+        /* mask-image: linear-gradient(black 80%, transparent); */
         aspect-ratio: 1 / 1;
-        object-fit: cover;
+        object-fit: contain;
     }
     @container img (width < 475px) {
     }
@@ -82,7 +86,8 @@ import HeroeImg from 'src/assets/images/monitor-web.jpg'
             flex-direction: column;
         }
         picture {
-            min-height: 258px;
+            height: 220px;
+            width: 220px;
             order: -1;
         }
         .description {
