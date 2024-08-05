@@ -6,7 +6,7 @@ import HeroeImg from 'src/assets/images/monitor-web.jpg'
 <main>
     <div class='text-icons'>
         <h1>
-            Frontend Developer specialized in <span class='highlight-2'
+            Frontend Developer specialized in <span class='highlight'
                 >UI/UX</span
             >
         </h1>
@@ -48,12 +48,15 @@ import HeroeImg from 'src/assets/images/monitor-web.jpg'
         /* font-size: 40px; */
         color: var(--clr-accent);
     }
-    .highlight-2 {
+    .highlight {
         color: var(--clr-title-highlight);
     }
     .description {
         color: var(--clr-subtitle);
         margin-bottom: 32px;
+    }
+    a {
+        color: var(--clr-title-highlight);
     }
 
     picture {
@@ -68,9 +71,6 @@ import HeroeImg from 'src/assets/images/monitor-web.jpg'
     img {
         aspect-ratio: 1 / 1;
         object-fit: cover;
-    }
-    a {
-        color: var(--clr-title-highlight);
     }
     @container img (width < 475px) {
     }
