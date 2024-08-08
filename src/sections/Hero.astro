@@ -1,20 +1,19 @@
 ---
 import IconList from '../components/IconList.astro'
-import HeroeImg from 'src/assets/images/Marco02.jpg'
+import HeroeImg from 'src/assets/images/marco.jpg'
 ---
 
 <main>
     <div class='text-icons'>
         <h1>
-            Frontend Developer specialized in <span class='highlight'>UI</span>
+            Hey! I'm Marco, <span class='highlight'>Frontend Developer</span>
         </h1>
         <div class='description'>
             <p>
-                With a solid foundation in Digital Design, I can bridge the gap
-                between design and development
+                I enjoy both design and development, bringing creativity and functionality together
             </p>
             <p>
-                I am currently open to work. Feel free to reach out to me at
+                Currently open to new opportunities. Feel free to reach out at
                 <a
                     href='mailto:mh94.design@gmail.com?subject=Contact from portfolio'
                 >
@@ -44,7 +43,11 @@ import HeroeImg from 'src/assets/images/Marco02.jpg'
     }
     h1 {
         /* font-size: 40px; */
+        font-family: var(--font-hero);
+        line-height: 1.2;
+        font-weight: 700;
         color: var(--clr-accent);
+
     }
     .highlight {
         color: var(--clr-title-highlight);
