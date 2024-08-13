@@ -36,4 +36,11 @@ const skills = await Astro.glob('../assets/icons/skills/*.astro')
     :global(body.dark-theme .alt-dark#astro path:not(:last-child)) {
         fill: white;
     }
+
+    @media only screen and (max-width: 475px) {
+        .skills-wrapper {
+            grid-template-columns: repeat(3, minmax(5ch, 1fr));
+            gap: 2.5rem 1.25rem;
+        }
+    }
 </style>
