@@ -1,12 +1,12 @@
 ---
-const skills = await Astro.glob("../assets/icons/skills/*.astro");
+const skills = await Astro.glob('../assets/icons/skills/*.astro')
 ---
 
 <section>
     <h2>Skills</h2>
 
-    <div class="skills-wrapper">
-        { skills.map((skill) => <skill.default />) }
+    <div class='skills-wrapper'>
+        {skills.map((skill) => <skill.default />)}
     </div>
 </section>
 
@@ -18,5 +18,22 @@ const skills = await Astro.glob("../assets/icons/skills/*.astro");
         gap: 2.5rem 2rem;
         padding: 0;
         max-width: 1080px;
+    }
+    :global(.skill-icon) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    :global(.skill-icon span) {
+        font-size: var(--step-0);
+    }
+    :global(body.dark-theme .alt-dark:not(#jQuery, #astro) path) {
+        fill: white;
+    }
+    :global(body.dark-theme .alt-dark#jQuery path:not(:first-child)) {
+        fill: white;
+    }
+    :global(body.dark-theme .alt-dark#astro path:not(:last-child)) {
+        fill: white;
     }
 </style>
