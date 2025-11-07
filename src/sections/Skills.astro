@@ -12,17 +12,21 @@ const skills = await Astro.glob('../assets/icons/skills/*.astro')
 
 <style>
     .skills-wrapper {
-        display: grid;
-        justify-items: center;
-        grid-template-columns: repeat(auto-fit, minmax(9ch, 1fr));
-        gap: 2.5rem 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2.75rem 2rem;
         padding: 0;
         max-width: 1080px;
     }
+
     :global(.skill-icon) {
         display: flex;
         flex-direction: column;
         align-items: center;
+        flex: 0 0 auto;
+        min-width: 9ch;
     }
     :global(.skill-icon span) {
         font-size: var(--step-0);
@@ -39,6 +43,7 @@ const skills = await Astro.glob('../assets/icons/skills/*.astro')
 
     @media only screen and (max-width: 475px) {
         .skills-wrapper {
+            display: grid;
             grid-template-columns: repeat(3, minmax(5ch, 1fr));
             gap: 2.5rem 1.25rem;
         }
